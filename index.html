@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070b14">
+<title>Mighty Project</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>MIGHTY PROJECT</h1>
+  <div class="sub">MONTH 1</div>
+</header>
+
+<main>
+  <section class="card" id="today"></section>
+
+  <section class="card">
+    <div class="row between"><h2>Napredak</h2><strong id="pct" class="lime">0%</strong></div>
+    <div class="bar"><div id="barFill"></div></div>
+    <div class="stats">
+      <div><b id="stEx">0</b><span>urađenih vežbi</span></div>
+      <div><b id="stDays">0</b><span>završenih dana</span></div>
+      <div><b id="stStreak">0</b><span>niz dana</span></div>
+    </div>
+  </section>
+
+  <section class="card" id="daySec">
+    <div class="row between">
+      <button class="nav" id="prevDay" aria-label="Prethodni dan">‹</button>
+      <div class="center"><div id="dayDate" class="muted"></div><h2 id="dayTitle"></h2></div>
+      <button class="nav" id="nextDay" aria-label="Sledeći dan">›</button>
+    </div>
+    <div id="dayNote"></div>
+    <div id="exList"></div>
+    <div class="row gap">
+      <button class="btn" id="markDay">Označi dan završenim</button>
+      <button class="btn ghost" id="resetDay">Poništi dan</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Kalendar (30 dana)</h2>
+    <div class="legend"><span class="lg done"></span>završeno <span class="lg part"></span>započeto <span class="lg rest"></span>odmor</div>
+    <div class="cal" id="cal"></div>
+  </section>
+
+  <section class="card">
+    <h2>Podešavanja</h2>
+    <label class="muted" for="startDate">Početak izazova</label>
+    <input type="date" id="startDate">
+    <button class="btn danger" id="resetAll">Obriši sav napredak</button>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
