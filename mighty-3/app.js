@@ -55,12 +55,11 @@ function pic(key) {
   return `<svg viewBox="0 0 100 70" aria-hidden="true">${p}</svg>`;
 }
 
-// ===== Plan: 3× nedeljno celo telo (4 vežbe, 2 serije do otkaza) + džak 2× 15 min =====
-// Svaki trening ima varijantu A i B koje se smenjuju svake nedelje; svaki mesec teža varijanta vežbe.
-// n = naziv za mesec 1/2/3, c = cilj ponavljanja, nf = NE do otkaza
-const ex = (n, p, c, t, nf) => ({ n, p, c, t, nf });
+// ===== Plan za rast: gornji/donji deo 4× nedeljno, supersetovi, 3 serije (poslednja do otkaza) + džak 2× 15 min =====
+// l = oznaka (A1/A2 = superset), n = naziv za mesec 1/2/3, c = cilj ponavljanja, nf = NE do otkaza
+const ex = (l, n, p, c, t, nf) => ({ l, n, p, c, t, nf, sets: 3 });
 const DZAK = {
-  n: ['Boks džak', 'Boks džak', 'Boks džak'], p: 'dzak', min: 15, sets: 1,
+  l: 'Džak', n: ['Boks džak', 'Boks džak', 'Boks džak'], p: 'dzak', min: 15, sets: 1,
   tm: [
     '5 rundi po 3 minuta, kratka pauza između. Gard gore, brada dole, kretanje oko džaka, kombinacije 1-2, 1-2-3.',
     '5 rundi po 3 minuta. U poslednjih 30 sekundi svake runde maksimalan tempo. Dodaj krošee i aperkate u telo.',
@@ -68,46 +67,44 @@ const DZAK = {
   ]
 };
 const SP = ', 3 s spuštanje';
+const RANAC = ' Kad pređeš gornji broj u sve 3 serije, stavi ranac sa težinom.';
+const REST = { title: 'Odmor', rest: 1, note: 'Dan odmora 😴 – ovo nije propušten trening. Prošetaj 7–8 hiljada koraka ako možeš.', ex: [{ l: '', n: ['Odmor', 'Odmor', 'Odmor'], p: 'odmor', sets: 1, t: 'Bez treninga. Mišići rastu dok se odmaraš.' }] };
 const PLAN = {
-  1: { title: 'Trening 1', v: [[
-    ex(['Zgibovi', 'Zgibovi sa pauzom 1 s gore', 'Zgibovi sa rancem'], 'zgib', '5–12', 'Hvat malo širi od ramena, povuci grudi ka šipki, spuštaj se do pune ekstenzije ruku.'),
-    ex(['Sklekovi sa nogama na stolici', 'Sklekovi sa nogama na stolici' + SP, 'Sklekovi sa nogama na stolici i rancem'], 'decline', '8–20', 'Stopala na stolici, šake na podu, telo pravo. Radi gornji deo grudi i ramena.'),
-    ex(['Bugarski čučanj', 'Bugarski čučanj sa bučicama', 'Bugarski čučanj sa bučicama' + SP], 'bugarski', '8–15 po nozi', 'Zadnja noga na stolici. Spuštaj se pravo dole dok prednja butina ne bude paralelna sa podom. Jedna serija = obe noge.'),
-    ex(['Lateralno podizanje bučica', 'Lateralno podizanje' + SP, 'Lateralno podizanje + delimična ponavljanja na kraju'], 'lateral', '15–25', 'Blago savijeni laktovi, podiži u stranu do visine ramena, bez zamaha.')
-  ], [
-    ex(['Široki zgibovi', 'Široki zgibovi sa pauzom gore', 'Široki zgibovi, 4 s spuštanje'], 'zgib', '4–10', 'Hvat dosta širi od ramena, vodi laktovima nadole – širi leđa.'),
-    ex(['Široki sklekovi', 'Široki sklekovi' + SP, 'Streličarski (arčer) sklekovi'], 'sirokisk', '8–20', 'Šake šire od ramena. Kod arčer sklekova telo ide ka jednoj ruci, druga je ispružena u stranu.'),
-    ex(['Penjanje na stolicu', 'Penjanje na stolicu sa bučicama', 'Penjanje na stolicu sa bučicama, polako dole'], 'stepup', '10–15 po nozi', 'Cela stopa na stolici, gurni se gore preko pete, ne odbijaj se zadnjom nogom.'),
-    ex(['Potisak bučica iznad glave', 'Arnold potisak', 'Arnold potisak' + SP], 'potisak', '15–25', 'Stojeći, stomak stegnut, gurni bučice pravo gore. Kod Arnold potiska dlanovi kreću ka tebi i okreću se dok podižeš.')
-  ]] },
-  2: { title: 'Boks džak', ex: [DZAK] },
-  3: { title: 'Trening 2', v: [[
-    ex(['Zgibovi obrnutim hvatom', 'Zgibovi obrnutim hvatom' + SP, 'Zgibovi obrnutim hvatom sa rancem'], 'chin', '5–12', 'Dlanovi ka tebi, u širini ramena. Povuci bradu iznad šipke – radi leđa i biceps.'),
-    ex(['Pike sklekovi', 'Pike sklekovi sa nogama na stolici', 'Pike sklekovi sa nogama na stolici' + SP], 'pike', '6–15', 'Kukovi visoko (obrnuto V), spuštaj glavu ka podu ispred šaka pa se odgurni. Radi ramena.'),
-    ex(['Goblet čučanj sa bučicom', 'Goblet čučanj' + SP, 'Goblet čučanj 1½ (dole – pola gore – dole – gore)'], 'cucanj', '15–25', 'Drži bučicu uz grudi, laktovi između kolena. Duboko dole, leđa uspravna.'),
-    ex(['Podizanje kolena u visu', 'Podizanje ispruženih nogu u visu', 'Podizanje ispruženih nogu do šipke'], 'visenje', '8–15', 'Vis na šipci, bez ljuljanja. Podigni noge polako i polako ih spusti.')
-  ], [
-    ex(['Veslanje sa dve bučice u pretklonu', 'Veslanje sa dve bučice, 1 s pauza gore', 'Veslanje sa dve bučice' + SP], 'veslanje', '12–20', 'Pretklon oko 45°, leđa ravna, kolena blago savijena. Povuci bučice ka stomaku.'),
-    ex(['Potisak bučica na podu', 'Potisak bučica na podu' + SP, 'Potisak bučica na podu, 1 s pauza dole' + SP], 'floor', '15–25', 'Lezi na leđa, laktovi dodirnu pod, gurni bučice pravo gore iznad grudi.'),
-    ex(['Nordijski pregib (samo spuštanje)', 'Nordijski pregib, sporije spuštanje', 'Nordijski pregib (dole i nazad gore)'], 'nordijski', '4–8', 'Kleči, zakači pete ispod kauča ili kreveta. Telo pravo, spuštaj se napred što sporije, dočekaj se rukama. Jača zadnju ložu.'),
-    ex(['Pregib za biceps', 'Pregib za biceps' + SP, 'Pregib za biceps, 1 s pauza gore' + SP], 'biceps', '12–20', 'Laktovi uz telo, bez ljuljanja, spuštaj polako do kraja.')
-  ]] },
-  4: { title: 'Odmor', rest: 1, note: 'Dan odmora 😴 – ovo nije propušten trening. Prošetaj ako možeš.', ex: [{ n: ['Odmor', 'Odmor', 'Odmor'], p: 'odmor', sets: 1, t: 'Bez treninga. Mišići rastu dok se odmaraš.' }] },
-  5: { title: 'Trening 3', v: [[
-    ex(['Veslanje jednom rukom sa bučicom', 'Veslanje jednom rukom' + SP, 'Veslanje jednom rukom, 1 s pauza gore' + SP], 'veslanje', '12–20 po ruci', 'Osloni se rukom i kolenom na stolicu, leđa ravna. Povuci bučicu ka kuku i stisni lopaticu.'),
-    ex(['Propadanja između dve stolice', 'Propadanja' + SP, 'Propadanja sa nogama na trećoj stolici'], 'propadanja', '8–20', 'Stabilne stolice! Spuštaj se dok laktovi ne budu pod 90°, telo blago napred – radi grudi i triceps.'),
-    ex(['Sedanje na stolicu na jednoj nozi', 'Sedanje na stolicu na jednoj nozi' + SP, 'Sedanje na stolicu na jednoj nozi sa bučicom'], 'cucanj1', '6–12 po nozi', 'Stani ispred stolice na jednoj nozi, polako sedni i ustani bez pomoći druge noge.'),
-    ex(['Triceps ekstenzija iznad glave', 'Triceps ekstenzija iznad glave' + SP, 'Triceps ekstenzija iznad glave, 1 s pauza dole'], 'triceps', '12–20 po ruci', 'Bučica iznad glave, lakat usmeren gore. Spusti bučicu iza glave pa ispruži ruku.')
-  ], [
-    ex(['Zgibovi uskim hvatom', 'Zgibovi uskim hvatom' + SP, 'Zgibovi uskim hvatom sa rancem'], 'chin', '5–12', 'Šake blizu jedna drugoj. Povuci grudi ka šipki, polako dole.'),
-    ex(['Dijamant sklekovi', 'Dijamant sklekovi' + SP, 'Dijamant sklekovi sa rancem'], 'dijamant', '6–20', 'Šake spojene ispod grudi (romb), laktovi uz telo – radi triceps i grudi.'),
-    ex(['Skokovi iz čučnja', 'Skokovi iz čučnja sa pauzom dole', 'Skokovi iz dubokog čučnja'], 'skok', '8–10', 'Eksplozivno gore, meko doskoči sa savijenim kolenima. OVDE NE IDI DO OTKAZA – stani kad skok izgubi brzinu.', 1),
-    ex(['Čekić pregib', 'Čekić pregib' + SP, 'Čekić pregib preko tela'], 'cekic', '12–20', 'Dlanovi okrenuti jedan ka drugom. Jača podlakticu i biceps.')
-  ]] },
-  6: { title: 'Boks džak', ex: [DZAK] },
-  0: { title: 'Odmor', rest: 1, note: 'Dan odmora 😴 – ovo nije propušten trening.', ex: [{ n: ['Odmor', 'Odmor', 'Odmor'], p: 'odmor', sets: 1, t: 'Bez treninga. Spavaj, jedi dovoljno proteina i pij vodu.' }] }
+  1: { title: 'Gornji deo A', ex: [
+    ex('A1', ['Zgibovi', 'Zgibovi sa pauzom 1 s gore', 'Zgibovi sa rancem'], 'zgib', '6–10', 'Hvat malo širi od ramena, povuci grudi ka šipki, spuštaj se do pune ekstenzije.' + RANAC),
+    ex('A2', ['Sklekovi sa nogama na stolici', 'Sklekovi sa nogama na stolici' + SP, 'Sklekovi sa nogama na stolici i rancem'], 'decline', '8–15', 'Stopala na stolici, šake na podu, telo pravo. Radi gornji deo grudi i ramena.' + RANAC),
+    ex('B1', ['Veslanje sa dve bučice u pretklonu', 'Veslanje sa dve bučice, 1 s pauza gore', 'Veslanje sa dve bučice, pauza gore' + SP], 'veslanje', '12–20', 'Pretklon oko 45°, leđa ravna, kolena blago savijena. Povuci obe bučice ka stomaku i stisni lopatice.'),
+    ex('B2', ['Pike sklekovi', 'Pike sklekovi sa nogama na stolici', 'Pike sklekovi sa nogama na stolici' + SP], 'pike', '6–12', 'Kukovi visoko (obrnuto V), spuštaj glavu ka podu ispred šaka pa se odgurni. Radi ramena.'),
+    ex('C', ['Lateralno podizanje bučica', 'Lateralno podizanje' + SP, 'Lateralno podizanje + delimična ponavljanja na kraju'], 'lateral', '15–25', 'Blago savijeni laktovi, podiži u stranu do visine ramena, bez zamaha.')
+  ] },
+  2: { title: 'Donji deo A + džak', ex: [
+    ex('A1', ['Bugarski čučanj sa bučicama', 'Bugarski čučanj sa bučicama' + SP, 'Bugarski čučanj sa bučicama i rancem'], 'bugarski', '8–15 po nozi', 'Zadnja noga na stolici. Spuštaj se pravo dole dok prednja butina ne bude paralelna sa podom. Jedna serija = obe noge.'),
+    ex('A2', ['Podizanje kolena u visu', 'Podizanje ispruženih nogu u visu', 'Podizanje ispruženih nogu do šipke'], 'visenje', '8–15', 'Vis na šipci, bez ljuljanja. Podigni noge polako i polako ih spusti.'),
+    ex('B1', ['Nordijski pregib (samo spuštanje)', 'Nordijski pregib, sporije spuštanje', 'Nordijski pregib (dole i nazad gore)'], 'nordijski', '4–8', 'Kleči, zakači pete ispod kauča. Telo pravo, spuštaj se napred što sporije, dočekaj se rukama. Jača zadnju ložu.'),
+    ex('B2', ['Podizanje na prste jedne noge', 'Podizanje na prste jedne noge sa bučicom', 'Podizanje na prste jedne noge sa bučicom, 2 s gore'], 'prsti', '15–20 po nozi', 'Podigni se što više, zadrži gore, polako spusti. Drži se za zid zbog ravnoteže.'),
+    ex('C', ['Skokovi iz čučnja', 'Skokovi iz čučnja sa pauzom dole', 'Skokovi iz dubokog čučnja'], 'skok', '6', 'Eksplozivno gore, meko doskoči sa savijenim kolenima. NE DO OTKAZA – svaki skok maksimalno brz.', 1),
+    DZAK
+  ] },
+  3: REST,
+  4: { title: 'Gornji deo B', ex: [
+    ex('A1', ['Zgibovi obrnutim hvatom', 'Zgibovi obrnutim hvatom' + SP, 'Zgibovi obrnutim hvatom sa rancem'], 'chin', '6–10', 'Dlanovi ka tebi, u širini ramena. Povuci bradu iznad šipke – radi leđa i biceps.' + RANAC),
+    ex('A2', ['Propadanja između dve stolice', 'Propadanja' + SP, 'Propadanja sa nogama na trećoj stolici'], 'propadanja', '8–15', 'Stabilne stolice! Spuštaj se dok laktovi ne budu pod 90°, telo blago napred – radi grudi i triceps.'),
+    ex('B1', ['Široki zgibovi', 'Široki zgibovi sa pauzom gore', 'Široki zgibovi, 4 s spuštanje'], 'zgib', '5–10', 'Hvat dosta širi od ramena, vodi laktovima nadole – širi leđa.'),
+    ex('B2', ['Dijamant sklekovi', 'Dijamant sklekovi' + SP, 'Dijamant sklekovi sa rancem'], 'dijamant', '8–15', 'Šake spojene ispod grudi (romb), laktovi uz telo – radi triceps i grudi.'),
+    ex('C', ['Pregib za biceps', 'Pregib za biceps' + SP, 'Pregib za biceps, 1 s pauza gore' + SP], 'biceps', '12–20', 'Laktovi uz telo, bez ljuljanja, spuštaj polako do kraja.')
+  ] },
+  5: { title: 'Donji deo B + džak', ex: [
+    ex('A1', ['Čučanj sa rancem', 'Goblet čučanj sa rancem na leđima', 'Čučanj 1½ sa rancem (dole – pola gore – dole – gore)'], 'cucanj', '15–25', 'Stopala u širini ramena, kukovi unazad, kolena prate prste, pete na podu.' + RANAC),
+    ex('A2', ['Bočni plank', 'Bočni plank sa podizanjem gornje noge', 'Bočni plank sa spuštanjem i podizanjem kuka'], 'sideplank', '30–60 s po strani', 'Lakat ispod ramena, telo u pravoj liniji. Jedna serija = obe strane.'),
+    ex('B1', ['Penjanje na stolicu sa bučicama', 'Penjanje na stolicu sa bučicama, polako dole', 'Penjanje na stolicu sa bučicama i rancem'], 'stepup', '10–15 po nozi', 'Cela stopa na stolici, gurni se gore preko pete, ne odbijaj se zadnjom nogom.'),
+    ex('B2', ['Sedanje na stolicu na jednoj nozi', 'Sedanje na stolicu na jednoj nozi' + SP, 'Sedanje na stolicu na jednoj nozi sa bučicom'], 'cucanj1', '6–12 po nozi', 'Stani ispred stolice na jednoj nozi, polako sedni i ustani bez pomoći druge noge.'),
+    ex('C', ['Podizanje na prste obe noge sa rancem', 'Podizanje na prste sa rancem, 2 s gore', 'Podizanje na prste jedne noge sa rancem'], 'prsti', '15–25', 'Podigni se što više, zadrži gore, polako spusti.'),
+    DZAK
+  ] },
+  6: REST,
+  0: REST
 };
-const DAY_NOTE = 'Zagrevanje 2–3 min. 2 serije po vežbi do otkaza (dok ne možeš nijedno čisto ponavljanje), odmor 1,5–2 min. Upiši koliko si uradio u svakoj seriji – sledeći put pokušaj bar jedno ponavljanje više. Ukupno ~20 min.';
+const DAY_NOTE = 'Zagrevanje 2–3 min. Vežbe sa istim slovom rade se u paru (superset): A1 pa odmah A2, odmor 60–90 s, ponovi 3 puta. Prve dve serije završi sa 1–2 ponavljanja u rezervi, treću idi do otkaza. Upiši koliko si uradio – sledeće nedelje pokušaj više.';
 const DANI = ['Nedelja', 'Ponedeljak', 'Utorak', 'Sreda', 'Četvrtak', 'Petak', 'Subota'];
 const MESECI = ['januar', 'februar', 'mart', 'april', 'maj', 'jun', 'jul', 'avgust', 'septembar', 'oktobar', 'novembar', 'decembar'];
 const NDAYS = 90;
@@ -127,12 +124,12 @@ const planOf = k => {
 };
 
 // ===== Stanje (localStorage) =====
-const LS = 'mighty-3meseca-v3';
+const LS = 'mighty-3meseca-v4';
 let S;
 try { S = JSON.parse(localStorage.getItem(LS)); } catch (e) { S = null; }
-if (!S || !S.start) { let old = null; try { old = JSON.parse(localStorage.getItem('mighty-3meseca-v2')) || JSON.parse(localStorage.getItem('mighty-3meseca')); } catch (e) {} S = { start: (old && old.start) || todayKey(), d: {} }; }
+if (!S || !S.start) { let old = null; try { old = JSON.parse(localStorage.getItem('mighty-3meseca-v3')) || JSON.parse(localStorage.getItem('mighty-3meseca-v2')) || JSON.parse(localStorage.getItem('mighty-3meseca')); } catch (e) {} S = { start: (old && old.start) || todayKey(), d: {} }; }
 S.r = S.r || {}; // upisana ponavljanja: S.r[datum][vežba] = [serija1, serija2]
-const repsOf = (k, i) => { const a = (S.r[k] || {})[i]; return [0, 1].map(j => Array.isArray(a) ? a[j] || '' : ''); };
+const repsOf = (k, i) => { const a = (S.r[k] || {})[i]; return Array.from({ length: exOf(k, i).sets }, (_, j) => Array.isArray(a) ? a[j] || '' : ''); };
 const save = () => { try { localStorage.setItem(LS, JSON.stringify(S)); } catch (e) {} };
 save();
 
@@ -140,7 +137,7 @@ const days = () => Array.from({ length: NDAYS }, (_, i) => addDays(S.start, i));
 const last = () => addDays(S.start, NDAYS - 1);
 const inRange = k => k >= S.start && k <= last();
 const monthOf = k => Math.min(2, Math.floor(Math.max(0, days().indexOf(k)) / 30)); // 0, 1, 2
-const exOf = (k, i) => { const e = planOf(k).ex[i], m = monthOf(k); return Object.assign({ sets: 2 }, e, { name: e.n[m], tip: e.tm ? e.tm[m] : e.t }); };
+const exOf = (k, i) => { const e = planOf(k).ex[i], m = monthOf(k); return Object.assign({}, e, { name: e.n[m], tip: e.tm ? e.tm[m] : e.t }); };
 const setsOf = (k, i) => {
   const a = (S.d[k] && S.d[k][i]) || [];
   return Array.from({ length: exOf(k, i).sets }, (_, j) => !!a[j]);
@@ -208,7 +205,7 @@ function render() {
   else if (tk > last()) h += `<h2>Program je završen 🏆</h2><p class="muted">Bravo! Izaberi novi datum početka u podešavanjima za novi krug.</p>`;
   else {
     h += `<h2>${tp.title}<span class="lvl">Mesec ${monthOf(tk) + 1}</span>${dayDone(tk) ? ' ✅' : ''}</h2>`;
-    h += tp.rest ? `<div class="note">${tp.note}</div>` : `<div class="muted">${tp.ex.length > 1 ? tp.ex.length + ' vežbe · ~20 min' : '15 minuta'} · Dan ${days().indexOf(tk) + 1} od ${NDAYS}</div>`;
+    h += tp.rest ? `<div class="note">${tp.note}</div>` : `<div class="muted">${tp.ex.length > 1 ? (tp.ex.some(e => e.min) ? '~35 min (sa džakom)' : '~30 min') : '15 minuta'} · Dan ${days().indexOf(tk) + 1} od ${NDAYS}</div>`;
     h += `<button class="btn big" id="go">${tp.rest ? 'Pogledaj današnji plan' : 'Započni trening'}</button>`;
   }
   $('today').innerHTML = h;
@@ -221,15 +218,15 @@ function render() {
   // Izabrani dan
   const p = planOf(sel), idx = days().indexOf(sel), m = monthOf(sel);
   $('dayDate').textContent = `Dan ${idx + 1} · Mesec ${m + 1} · ${nice(sel)}`;
-  $('dayTitle').textContent = p.title + (p.ex.length > 1 ? (p.ab ? ' B' : ' A') : '') + (dayDone(sel) ? ' ✅' : '');
-  $('dayNote').innerHTML = p.rest ? `<div class="note">${p.note}</div>` : p.ex.length > 1 ? `<div class="note"><b>Trening ${p.ab ? 'B' : 'A'}</b> · ${DAY_NOTE}</div>` : '';
+  $('dayTitle').textContent = p.title + (dayDone(sel) ? ' ✅' : '');
+  $('dayNote').innerHTML = p.rest ? `<div class="note">${p.note}</div>` : p.ex.length > 1 ? `<div class="note">${DAY_NOTE}</div>` : '';
   $('prevDay').disabled = idx <= 0; $('nextDay').disabled = idx >= NDAYS - 1;
   $('exList').innerHTML = p.ex.map((_, i) => {
     const e = exOf(sel, i), s = setsOf(sel, i), ok = s.every(Boolean);
-    const sub = p.rest ? '' : e.min ? `${e.min} minuta` : e.nf ? `2 serije · ${e.c} (ne do otkaza)` : `2 serije do otkaza · cilj ${e.c}`;
-    let body = `<div class="exHead"><div class="nm">${i + 1}. ${e.name}<small>${sub}</small></div><button class="chk ${ok ? 'on' : ''}" data-ex="${i}" aria-label="Označi vežbu">${ok ? '✓' : ''}</button></div>${pic(e.p)}<p class="tip">${e.tip}</p>`;
+    const sub = p.rest ? '' : e.min ? `${e.min} minuta` : e.nf ? `3 serije · ${e.c} (ne do otkaza)` : `3 serije · cilj ${e.c} · zadnja do otkaza`;
+    let body = `<div class="exHead"><div class="nm">${e.l ? '<span class="lvl">' + e.l + '</span> ' : ''}${e.name}<small>${sub}</small></div><button class="chk ${ok ? 'on' : ''}" data-ex="${i}" aria-label="Označi vežbu">${ok ? '✓' : ''}</button></div>${pic(e.p)}<p class="tip">${e.tip}</p>`;
     if (e.sets > 1 && !p.rest) {
-      const cur = repsOf(sel, i), prev = repsOf(addDays(sel, -14), i);
+      const cur = repsOf(sel, i), prev = repsOf(addDays(sel, -7), i);
       body += `<div class="reps">${cur.map((v, j) => `<label>${j + 1}. serija<input type="number" inputmode="numeric" min="0" max="999" placeholder="${prev[j] || '–'}" data-rep="${i}" data-rs="${j}" value="${v || ''}"></label>`).join('')}<span class="muted">${prev.some(Boolean) ? 'Prošli put: <b class="lime">' + prev.map(v => v || '–').join(' / ') + '</b>' : 'Prvi put – upiši koliko si uradio'}</span></div>`;
     }
     if (e.sets > 1) body += `<div class="sets">${s.map((v, j) => `<button class="set ${v ? 'on' : ''}" data-ex="${i}" data-set="${j}">Serija ${j + 1}</button>`).join('')}</div>`;
@@ -257,7 +254,7 @@ function render() {
       c += '<div></div>'.repeat((d.getDay() + 6) % 7);
     }
     const pl = planOf(k);
-    const short = { 'Trening 1': 'T1', 'Trening 2': 'T2', 'Trening 3': 'T3', 'Boks džak': 'džak', 'Odmor': 'odmor' }[pl.title];
+    const short = { 'Gornji deo A': 'gornji', 'Gornji deo B': 'gornji', 'Donji deo A + džak': 'noge', 'Donji deo B + džak': 'noge', 'Odmor': 'odmor' }[pl.title];
     const cls = ['d', pl.rest ? 'rest' : '', dayDone(k) && !pl.rest ? 'done' : (dayAny(k) ? 'part' : ''), k === tk ? 'today' : '', k === sel ? 'sel' : ''].join(' ');
     c += `<button class="${cls}" data-day="${k}">${d.getDate()}<small>${short}</small></button>`;
   });
