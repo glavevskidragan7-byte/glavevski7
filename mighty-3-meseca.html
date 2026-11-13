@@ -189,7 +189,7 @@ const DZAK = {
 };
 const SP = ', 3 s spuštanje';
 const RANAC = ' Kad pređeš gornji broj u obe serije, stavi ranac sa težinom.';
-const REST = { title: 'Odmor', rest: 1, note: 'Dan odmora 😴 – ovo nije propušten trening. Prošetaj 7–8 hiljada koraka ako možeš.', ex: [{ l: '', n: ['Odmor', 'Odmor', 'Odmor'], p: 'odmor', sets: 1, t: 'Bez treninga. Mišići rastu dok se odmaraš.' }] };
+const REST = { title: 'Odmor', rest: 1, note: 'Dan odmora 😴 – ovo nije propušten trening. Spavaj, jedi proteine i pij vodu.', ex: [{ l: '', n: ['Odmor', 'Odmor', 'Odmor'], p: 'odmor', sets: 1, t: 'Bez treninga. Mišići rastu dok se odmaraš.' }] };
 const PLAN = {
   1: { title: 'Gornji deo A', ex: [
     ex('A1', ['Zgibovi', 'Zgibovi sa pauzom 1 s gore', 'Zgibovi sa rancem'], 'zgib', '6–10', 'Hvat malo širi od ramena, povuci grudi ka šipki, spuštaj se do pune ekstenzije.' + RANAC),
@@ -198,7 +198,7 @@ const PLAN = {
     ex('B2', ['Pike sklekovi', 'Pike sklekovi sa nogama na stolici', 'Pike sklekovi sa nogama na stolici' + SP], 'pike', '6–12', 'Kukovi visoko (obrnuto V), spuštaj glavu ka podu ispred šaka pa se odgurni. Radi ramena.'),
     ex('C', ['Lateralno podizanje bučica', 'Lateralno podizanje' + SP, 'Lateralno podizanje + delimična ponavljanja na kraju'], 'lateral', '15–25', 'Blago savijeni laktovi, podiži u stranu do visine ramena, bez zamaha.')
   ] },
-  2: { title: 'Donji deo A + džak', ex: [
+  3: { title: 'Donji deo A + džak', ex: [
     ex('A1', ['Bugarski čučanj sa bučicama', 'Bugarski čučanj sa bučicama' + SP, 'Bugarski čučanj sa bučicama i rancem'], 'bugarski', '8–15 po nozi', 'Zadnja noga na stolici. Spuštaj se pravo dole dok prednja butina ne bude paralelna sa podom. Jedna serija = obe noge.'),
     ex('A2', ['Podizanje kolena u visu', 'Podizanje ispruženih nogu u visu', 'Podizanje ispruženih nogu do šipke'], 'visenje', '8–15', 'Vis na šipci, bez ljuljanja. Podigni noge polako i polako ih spusti.'),
     ex('B1', ['Pregib nogu sa peškirom', 'Pregib nogu sa peškirom, polako nazad (3 s)', 'Pregib nogu sa peškirom na jednoj nozi'], 'peskir', '8–15', 'Lezi na leđa na glatkom podu (pločice, laminat), pete na peškiru. Podigni kukove, privuci pete ka zadnjici pa ih polako ispruži – kukovi sve vreme gore. Radi zadnju ložu.'),
@@ -206,8 +206,8 @@ const PLAN = {
     ex('C', ['Skokovi iz čučnja', 'Skokovi iz čučnja sa pauzom dole', 'Skokovi iz dubokog čučnja'], 'skok', '6', 'Eksplozivno gore, meko doskoči sa savijenim kolenima. NE DO OTKAZA – svaki skok maksimalno brz.', 1),
     DZAK
   ] },
-  3: REST,
-  4: { title: 'Gornji deo B', ex: [
+  2: REST,
+  5: { title: 'Gornji deo B', ex: [
     ex('A1', ['Zgibovi obrnutim hvatom', 'Zgibovi obrnutim hvatom' + SP, 'Zgibovi obrnutim hvatom sa rancem'], 'chin', '6–10', 'Dlanovi ka tebi, u širini ramena. Povuci bradu iznad šipke – radi leđa i biceps.' + RANAC),
     ex('A2', ['Propadanja na stolici, kolena savijena', 'Propadanja na stolici, ispružene noge', 'Propadanja na stolici, noge na drugoj stolici'], 'dipstolica', '10–20', 'Leđima ka stolici, šake na ivici stolice, prsti napred. Spuštaj se dok laktovi ne budu pod 90°, laktovi idu unazad, ne u stranu. Radi triceps.'),
     ex('B1', ['Široki zgibovi', 'Široki zgibovi sa pauzom gore', 'Široki zgibovi, 4 s spuštanje'], 'zgib', '5–10', 'Hvat dosta širi od ramena, vodi laktovima nadole – širi leđa.'),
@@ -215,7 +215,7 @@ const PLAN = {
     ex('C1', ['Pregib za biceps', 'Pregib za biceps' + SP, 'Pregib za biceps, 1 s pauza gore' + SP], 'biceps', '12–20', 'Laktovi uz telo, bez ljuljanja, spuštaj polako do kraja.'),
     ex('C2', ['Triceps pregib ležeći (francuski potisak)', 'Triceps pregib ležeći' + SP, 'Triceps pregib ležeći, 1 s pauza dole' + SP], 'francuski', '12–20', 'Lezi na leđa, bučice iznad grudi. Savij samo laktove i spusti bučice pored glave, pa ispruži ruke. Nadlaktice se ne pomeraju.')
   ] },
-  5: { title: 'Donji deo B + džak', ex: [
+  0: { title: 'Donji deo B + džak', ex: [
     ex('A1', ['Čučanj sa rancem', 'Goblet čučanj sa rancem na leđima', 'Čučanj 1½ sa rancem (dole – pola gore – dole – gore)'], 'cucanj', '15–25', 'Stopala u širini ramena, kukovi unazad, kolena prate prste, pete na podu.' + RANAC),
     ex('A2', ['Bočni plank', 'Bočni plank sa podizanjem gornje noge', 'Bočni plank sa spuštanjem i podizanjem kuka'], 'sideplank', '30–60 s po strani', 'Lakat ispod ramena, telo u pravoj liniji. Jedna serija = obe strane.'),
     ex('B1', ['Penjanje na stolicu sa bučicama', 'Penjanje na stolicu sa bučicama, polako dole', 'Penjanje na stolicu sa bučicama i rancem'], 'stepup', '10–15 po nozi', 'Cela stopa na stolici, gurni se gore preko pete, ne odbijaj se zadnjom nogom.'),
@@ -223,8 +223,8 @@ const PLAN = {
     ex('C', ['Podizanje na prste obe noge sa rancem', 'Podizanje na prste sa rancem, 2 s gore', 'Podizanje na prste jedne noge sa rancem'], 'prsti', '15–25', 'Podigni se što više, zadrži gore, polako spusti.'),
     DZAK
   ] },
-  6: REST,
-  0: REST
+  4: REST,
+  6: REST
 };
 const DAY_NOTE = 'Zagrevanje 2–3 min. Vežbe sa istim slovom rade se u paru (superset): A1 pa odmah A2 (isto B1+B2, C1+C2), odmor 60–90 s, ponovi još jednom. Prvu seriju završi sa 1–2 ponavljanja u rezervi, drugu idi do otkaza. Upiši koliko si uradio – sledeće nedelje pokušaj više.';
 const DANI = ['Nedelja', 'Ponedeljak', 'Utorak', 'Sreda', 'Četvrtak', 'Petak', 'Subota'];

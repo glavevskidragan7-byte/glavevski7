@@ -1,4 +1,4 @@
-const CACHE = 'mighty3-v6';
+const CACHE = 'mighty3-v7';
 const FILES = ['./', 'index.html', 'style.css', 'app.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', e => {
