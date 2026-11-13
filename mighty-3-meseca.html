@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070b14">
+<title>Mighty Project — 3 meseca</title>
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+:root{--bg:#070b14;--card:#111827;--card2:#1a2233;--line:#263045;--txt:#f1f5f9;--mut:#94a3b8;--lime:#a3e635;--red:#f87171}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--txt);font:17px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{text-align:center;padding:22px 16px 6px}
+h1{margin:0;font-size:28px;letter-spacing:2px;font-weight:900}
+.sub{color:var(--lime);font-weight:800;letter-spacing:4px}
+h2{margin:0 0 8px;font-size:20px}
+main{max-width:560px;margin:0 auto;padding:8px 12px 40px}
+.card{background:var(--card);border-radius:20px;padding:16px;margin:12px 0}
+.row{display:flex;align-items:center}.between{justify-content:space-between}.gap{gap:10px;margin-top:12px}
+.center{text-align:center;flex:1;min-width:0}
+.muted{color:var(--mut);font-size:15px}.lime{color:var(--lime)}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:15px;font-size:17px;font-weight:800;background:var(--lime);color:#0b1200;cursor:pointer}
+.btn.ghost{background:var(--card2);color:var(--txt)}
+.btn.danger{background:transparent;color:var(--red);border:2px solid var(--red);margin-top:14px}
+.btn.big{font-size:20px;padding:18px;margin-top:12px}
+.btn:active{transform:scale(.98)}
+.nav{width:46px;height:46px;border-radius:50%;border:0;background:var(--card2);color:var(--txt);font-size:28px;flex:none}
+.bar{height:14px;background:var(--card2);border-radius:9px;overflow:hidden}
+#barFill{height:100%;width:0;background:var(--lime);transition:width .3s}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;text-align:center}
+.stats b{display:block;font-size:24px;color:var(--lime)}.stats span{font-size:13px;color:var(--mut)}
+.ex{background:var(--card2);border-radius:16px;padding:12px;margin-top:10px}
+.ex.ok{outline:2px solid var(--lime)}
+.exHead{display:flex;gap:10px;align-items:center}
+.exHead .nm{flex:1;min-width:0;font-weight:700}
+.exHead .nm small{display:block;color:var(--mut);font-weight:400}
+.chk{width:44px;height:44px;flex:none;border-radius:12px;border:2px solid var(--mut);background:transparent;color:#0b1200;font-size:26px;font-weight:900}
+.chk.on{background:var(--lime);border-color:var(--lime)}
+.ex svg{width:100%;max-width:220px;height:auto;display:block;margin:8px auto;background:#0d1320;border-radius:12px}
+.tip{color:var(--mut);font-size:15px;margin:4px 0 0}
+.sets{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.set{min-width:44px;height:40px;border-radius:10px;border:2px solid var(--line);background:transparent;color:var(--txt);font-weight:700;padding:0 10px}
+.set.on{background:var(--lime);border-color:var(--lime);color:#0b1200}
+.tag{display:inline-block;font-size:12px;background:#334155;color:var(--txt);border-radius:6px;padding:1px 7px;margin-left:4px;vertical-align:middle}
+.timer{margin-top:10px;text-align:center}
+.timer .t{font-size:44px;font-weight:900;font-variant-numeric:tabular-nums}
+.timer .row{gap:8px}.timer .btn{padding:12px;font-size:16px}
+.note{background:#1e293b;border-left:4px solid var(--lime);border-radius:10px;padding:10px 12px;margin-top:10px;font-size:15px}
+.legend{font-size:13px;color:var(--mut);margin-bottom:8px}
+.lg{display:inline-block;width:12px;height:12px;border-radius:4px;margin:0 4px 0 8px;vertical-align:-1px}
+.lg.done{background:var(--lime)}.lg.part{border:2px solid var(--lime)}.lg.rest{background:#334155}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal .wd{text-align:center;font-size:12px;color:var(--mut)}
+.cal .mon{grid-column:1/-1;font-weight:800;color:var(--lime);margin-top:6px;font-size:14px}
+.d{aspect-ratio:1;border:0;border-radius:10px;background:var(--card2);color:var(--txt);font-weight:700;font-size:15px;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1}
+.d small{font-size:9px;color:var(--mut);font-weight:600}
+.d.rest{background:#1e293b;color:var(--mut)}
+.d.part{box-shadow:inset 0 0 0 2px var(--lime)}
+.d.done{background:var(--lime);color:#0b1200}.d.done small{color:#0b1200}
+.d.today{text-decoration:underline;text-underline-offset:3px}
+.d.sel{outline:3px solid #fff}
+input[type=date]{width:100%;margin:6px 0 4px;padding:13px;border-radius:12px;border:1px solid var(--line);background:var(--card2);color:var(--txt);font-size:17px;color-scheme:dark}
+@media (max-width:360px){body{font-size:16px}h1{font-size:24px}.card{padding:12px}.d{font-size:13px}.d small{display:none}.timer .t{font-size:38px}}
+.tabs{display:flex;gap:6px;margin-bottom:10px}.tabs button{flex:1;padding:10px 4px;border-radius:12px;border:0;background:var(--card2);color:var(--txt);font-weight:700;font-size:15px}.tabs button.on{background:var(--lime);color:#0b1200}
+.lvl{display:inline-block;background:var(--lime);color:#0b1200;border-radius:8px;padding:1px 8px;font-size:13px;font-weight:800;margin-left:6px}
+.reps{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:10px;font-size:15px}.reps .muted{flex-basis:100%}
+.reps input{width:70px;margin-left:6px;padding:8px;border-radius:10px;border:1px solid var(--line);background:#0d1320;color:var(--txt);font-size:17px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <h1>MIGHTY PROJECT</h1>
+  <div class="sub" id="subTitle">3 MESECA</div>
+</header>
+
+<main>
+  <section class="card" id="today"></section>
+
+  <section class="card">
+    <div class="row between"><h2 id="progTitle">Napredak</h2><strong id="pct" class="lime">0%</strong></div>
+    <div class="bar"><div id="barFill"></div></div>
+    <div class="stats">
+      <div><b id="stEx">0</b><span>urađenih vežbi</span></div>
+      <div><b id="stDays">0</b><span>završenih dana</span></div>
+      <div><b id="stStreak">0</b><span>niz dana</span></div>
+    </div>
+  </section>
+
+  <section class="card" id="daySec">
+    <div class="row between">
+      <button class="nav" id="prevDay" aria-label="Prethodni dan">‹</button>
+      <div class="center"><div id="dayDate" class="muted"></div><h2 id="dayTitle"></h2></div>
+      <button class="nav" id="nextDay" aria-label="Sledeći dan">›</button>
+    </div>
+    <div id="dayNote"></div>
+    <div id="exList"></div>
+    <div class="row gap">
+      <button class="btn" id="markDay">Označi dan završenim</button>
+      <button class="btn ghost" id="resetDay">Poništi dan</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Kalendar (90 dana)</h2>
+    <div class="tabs" id="tabs"></div>
+    <div class="legend"><span class="lg done"></span>završeno <span class="lg part"></span>započeto <span class="lg rest"></span>odmor</div>
+    <div class="cal" id="cal"></div>
+  </section>
+
+  <section class="card">
+    <h2>Podešavanja</h2>
+    <label class="muted" for="startDate">Početak izazova</label>
+    <input type="date" id="startDate">
+    <button class="btn danger" id="resetAll">Obriši sav napredak</button>
+  </section>
+</main>
+
+<script>
+// ===== Crteži vežbi (jednostavne figure) =====
+// h=glava, l=linija tela, g=zelena strelica/pomeranje, r=pravougaonik (bučica/stolica/džak), f=pod
+const PICS = {
+  zgib: 'l10 6 90 6|h50 22|l42 6 50 30 58 6|l50 27 50 50|l50 50 46 66|l50 50 54 66|g72 50 72 24|g68 30 72 24 76 30',
+  chin: 'l10 6 90 6|h50 22|l46 6 46 18 50 30|l54 6 54 18 50 30|l50 27 50 50|l50 50 46 66|l50 50 54 66|g72 50 72 24|g68 30 72 24 76 30',
+  veslanje: 'f|h22 36|l28 38 60 32|l60 32 56 64|l60 32 66 64|l32 40 34 54|r28 54 12 7|g46 58 46 42|g42 47 46 42 50 47',
+  ranac: 'f|h22 36|l28 38 60 32|l60 32 56 64|l60 32 66 64|l32 40 36 50|r30 50 14 10|g50 60 50 44|g46 49 50 44 54 49',
+  superman: 'f|h24 46|l32 52 70 54|l32 52 10 42|l70 54 92 44|g50 40 50 28|g46 33 50 28 54 33',
+  sklek: 'f|h18 37|l30 58 30 41|l23 40 82 54|l82 54 86 60|g12 52 12 30|g9 35 12 30 15 35',
+  decline: 'f|r76 38 18 4|l92 42 92 64|h16 46|l28 64 28 50|l22 49 82 37|g10 58 10 40',
+  sirokisk: 'f|h50 30|l50 36 50 50|l30 62 34 40 66 40 70 62|g14 48 26 48|g86 48 74 48',
+  fly: 'f|h16 54|l21 58 70 58|l70 58 80 50 88 60|l30 58 20 40|l30 58 44 40|r15 34 9 7|r40 34 9 7|g26 26 38 26',
+  visenje: 'l10 6 90 6|h50 22|l42 6 50 30 58 6|l50 27 50 46|l50 46 64 44 64 58|g78 58 78 36|g74 42 78 36 82 42',
+  bicikl: 'f|h22 44|l26 48 50 58|l50 58 62 46 74 52|l50 58 64 58 82 54|l28 48 36 40|g42 30 56 30',
+  plank: 'f|h16 39|l20 41 82 50|l26 43 26 58 36 58|l82 50 86 58|g40 30 70 34',
+  dzak: 'f|l80 2 80 10|r72 10 16 40|h30 18|l30 23 32 44|l30 27 50 26 70 26|l30 28 22 36 30 40|l32 44 24 62|l32 44 42 62|g56 20 64 20',
+  cucanj: 'f|h42 22|l42 27 54 42|l54 42 38 46 40 62|l44 30 26 32|r50 26 10 14|g80 26 80 50|g76 44 80 50 84 44',
+  bugarski: 'f|r72 42 20 4|l88 46 88 64|l50 44 36 48 34 64|l50 44 62 58 74 42|l50 44 48 21|h48 15|l48 26 44 40|g20 30 20 52|g16 46 20 52 24 46',
+  rdl: 'f|h10 33|l40 40 16 36|l40 40 40 64|l40 40 76 32|l18 37 20 52|r15 52 10 6|g60 50 60 36',
+  skok: 'f|h50 8|l50 13 50 34|l40 2 50 18 60 2|l50 34 44 46|l50 34 56 46|g34 54 34 40|g30 45 34 40 38 45|g66 54 66 40|g62 45 66 40 70 45',
+  zid: 'f|l84 2 84 64|h78 15|l78 21 78 44|l78 44 56 44 56 64|l78 26 64 32',
+  prsti: 'f|h50 10|l50 15 50 40|l50 18 42 34|l50 18 58 34|r38 34 8 6|l50 40 47 56 49 60|l50 40 53 56 55 60|g72 50 72 24|g68 30 72 24 76 30',
+  pike: 'f|h31 47|l28 60 33 52 55 22|l55 22 80 60|g20 40 26 50',
+  potisak: 'f|h50 14|l50 19 50 42|l50 22 38 18 38 6|l50 22 62 18 62 6|r34 0 8 6|r58 0 8 6|l50 42 44 62|l50 42 56 62|g80 30 80 8|g76 14 80 8 84 14',
+  lateral: 'f|h50 12|l50 17 50 42|l26 22 50 22 74 22|r20 18 8 8|r72 18 8 8|l50 42 44 62|l50 42 56 62|g18 40 18 26|g82 40 82 26',
+  biceps: 'f|h50 12|l50 17 50 42|l56 21 58 36 62 24|l44 21 42 36 38 24|r58 18 8 8|r34 18 8 8|l50 42 44 62|l50 42 56 62',
+  cekic: 'f|h50 12|l50 17 50 42|l56 21 58 36 60 22|l44 21 42 36 40 22|r57 14 6 10|r37 14 6 10|l50 42 44 62|l50 42 56 62',
+  dijamant: 'f|h18 37|l28 58 30 41|l23 40 82 54|l82 54 86 60|l30 58 36 58 30 54|g12 52 12 30',
+  triceps: 'f|h50 14|l50 19 50 42|l46 21 44 6 54 12|l54 21 56 6|r50 6 8 8|l50 42 44 62|l50 42 56 62|g70 30 70 8',
+  pulover: 'f|h20 54|l25 58 70 58|l70 58 80 50 88 60|l30 58 12 50|r3 46 9 7|g18 40 30 34',
+  reverse: 'f|h22 36|l28 38 60 32|l60 32 56 64|l60 32 66 64|l32 40 22 50|l32 40 44 50|r16 50 8 6|r42 50 8 6|g12 44 12 30|g52 44 52 30',
+  srug: 'f|h50 12|l50 17 50 42|l44 20 42 40|l56 20 58 40|r38 40 8 6|r54 40 8 6|l50 42 44 62|l50 42 56 62|g70 26 70 12|g66 16 70 12 74 16',
+  vis: 'l10 6 90 6|h50 22|l42 6 50 30 58 6|l50 27 50 50|l50 50 46 66|l50 50 54 66',
+  floor: 'f|h16 54|l21 58 70 58|l70 58 80 50 88 60|l30 58 30 36|r26 30 9 7|g42 46 42 30|g38 35 42 30 46 35',
+  propadanja: 'f|r8 38 18 4|r74 38 18 4|l10 42 10 64|l90 42 90 64|h50 20|l50 25 50 46|l50 28 30 30 24 38|l50 28 70 30 76 38|l50 46 44 62|l50 46 58 60',
+  sideplank: 'f|h20 26|l24 30 80 56|l26 32 26 58|l30 32 30 8|g50 20 50 30',
+  stepup: 'f|r56 44 30 4|l84 48 84 64|l58 48 58 64|h50 10|l50 15 50 34|l50 34 62 36 64 44|l50 34 44 50 42 64|g30 56 30 36',
+  rdl2: 'f|h14 30|l44 34 20 34|l44 34 46 64|l44 34 52 64|l22 36 24 52|r19 52 10 6|g70 50 70 30',
+  cucanj1: 'f|r64 40 22 4|l84 44 84 64|h42 22|l42 27 56 42|l56 42 40 46 42 62|l56 42 30 44|l44 30 26 32',
+  koncentr: 'f|r46 42 30 4|h52 14|l52 19 58 40|l58 40 50 42 50 62|l54 24 44 36 42 26|r38 20 8 6|l58 40 70 42 70 62',
+  napred: 'f|h50 12|l50 17 50 42|l50 22 76 22|r76 18 8 8|l50 22 44 38|l50 42 44 62|l50 42 56 62|g86 44 86 26',
+  kickback: 'f|h22 36|l28 38 60 32|l60 32 56 64|l60 32 66 64|l32 40 44 40 60 38|r60 35 8 6|g50 50 66 48',
+  nordijski: 'f|r2 52 24 8|l40 62 16 60|l40 62 66 36|h70 30|l64 40 78 50|g84 40 88 54',
+  odmor: 'f|r14 44 72 10|h24 38|l28 40 80 40|g70 12 80 12 70 24 80 24'
+};
+function pic(key) {
+  const p = (PICS[key] || '').split('|').map(s => {
+    const k = s[0], n = s.slice(1).trim();
+    if (k === 'f') return '<line x1="4" y1="64" x2="96" y2="64" stroke="#334155" stroke-width="2"/>';
+    if (k === 'h') { const [x, y] = n.split(' '); return `<circle cx="${x}" cy="${y}" r="5" fill="#f1f5f9"/>`; }
+    if (k === 'r') { const [x, y, w, h] = n.split(' '); return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" fill="#64748b"/>`; }
+    const pts = n.match(/-?\d+ -?\d+/g).join(' ');
+    return `<polyline points="${pts}" fill="none" stroke="${k === 'g' ? '#a3e635' : '#f1f5f9'}" stroke-width="${k === 'g' ? 2 : 3}" stroke-linecap="round" stroke-linejoin="round"${k === 'g' ? ' stroke-dasharray="3 3"' : ''}/>`;
+  }).join('');
+  return `<svg viewBox="0 0 100 70" aria-hidden="true">${p}</svg>`;
+}
+
+// ===== Plan za rast: gornji/donji deo 4× nedeljno, supersetovi, 3 serije (poslednja do otkaza) + džak 2× 15 min =====
+// l = oznaka (A1/A2 = superset), n = naziv za mesec 1/2/3, c = cilj ponavljanja, nf = NE do otkaza
+const ex = (l, n, p, c, t, nf) => ({ l, n, p, c, t, nf, sets: 3 });
+const DZAK = {
+  l: 'Džak', n: ['Boks džak', 'Boks džak', 'Boks džak'], p: 'dzak', min: 15, sets: 1,
+  tm: [
+    '5 rundi po 3 minuta, kratka pauza između. Gard gore, brada dole, kretanje oko džaka, kombinacije 1-2, 1-2-3.',
+    '5 rundi po 3 minuta. U poslednjih 30 sekundi svake runde maksimalan tempo. Dodaj krošee i aperkate u telo.',
+    '15 minuta bez stajanja – 30 s eksplozivno, 30 s lakše (kretanje i džeb). Diši pri svakom udarcu.'
+  ]
+};
+const SP = ', 3 s spuštanje';
+const RANAC = ' Kad pređeš gornji broj u sve 3 serije, stavi ranac sa težinom.';
+const REST = { title: 'Odmor', rest: 1, note: 'Dan odmora 😴 – ovo nije propušten trening. Prošetaj 7–8 hiljada koraka ako možeš.', ex: [{ l: '', n: ['Odmor', 'Odmor', 'Odmor'], p: 'odmor', sets: 1, t: 'Bez treninga. Mišići rastu dok se odmaraš.' }] };
+const PLAN = {
+  1: { title: 'Gornji deo A', ex: [
+    ex('A1', ['Zgibovi', 'Zgibovi sa pauzom 1 s gore', 'Zgibovi sa rancem'], 'zgib', '6–10', 'Hvat malo širi od ramena, povuci grudi ka šipki, spuštaj se do pune ekstenzije.' + RANAC),
+    ex('A2', ['Sklekovi sa nogama na stolici', 'Sklekovi sa nogama na stolici' + SP, 'Sklekovi sa nogama na stolici i rancem'], 'decline', '8–15', 'Stopala na stolici, šake na podu, telo pravo. Radi gornji deo grudi i ramena.' + RANAC),
+    ex('B1', ['Veslanje sa dve bučice u pretklonu', 'Veslanje sa dve bučice, 1 s pauza gore', 'Veslanje sa dve bučice, pauza gore' + SP], 'veslanje', '12–20', 'Pretklon oko 45°, leđa ravna, kolena blago savijena. Povuci obe bučice ka stomaku i stisni lopatice.'),
+    ex('B2', ['Pike sklekovi', 'Pike sklekovi sa nogama na stolici', 'Pike sklekovi sa nogama na stolici' + SP], 'pike', '6–12', 'Kukovi visoko (obrnuto V), spuštaj glavu ka podu ispred šaka pa se odgurni. Radi ramena.'),
+    ex('C', ['Lateralno podizanje bučica', 'Lateralno podizanje' + SP, 'Lateralno podizanje + delimična ponavljanja na kraju'], 'lateral', '15–25', 'Blago savijeni laktovi, podiži u stranu do visine ramena, bez zamaha.')
+  ] },
+  2: { title: 'Donji deo A + džak', ex: [
+    ex('A1', ['Bugarski čučanj sa bučicama', 'Bugarski čučanj sa bučicama' + SP, 'Bugarski čučanj sa bučicama i rancem'], 'bugarski', '8–15 po nozi', 'Zadnja noga na stolici. Spuštaj se pravo dole dok prednja butina ne bude paralelna sa podom. Jedna serija = obe noge.'),
+    ex('A2', ['Podizanje kolena u visu', 'Podizanje ispruženih nogu u visu', 'Podizanje ispruženih nogu do šipke'], 'visenje', '8–15', 'Vis na šipci, bez ljuljanja. Podigni noge polako i polako ih spusti.'),
+    ex('B1', ['Nordijski pregib (samo spuštanje)', 'Nordijski pregib, sporije spuštanje', 'Nordijski pregib (dole i nazad gore)'], 'nordijski', '4–8', 'Kleči, zakači pete ispod kauča. Telo pravo, spuštaj se napred što sporije, dočekaj se rukama. Jača zadnju ložu.'),
+    ex('B2', ['Podizanje na prste jedne noge', 'Podizanje na prste jedne noge sa bučicom', 'Podizanje na prste jedne noge sa bučicom, 2 s gore'], 'prsti', '15–20 po nozi', 'Podigni se što više, zadrži gore, polako spusti. Drži se za zid zbog ravnoteže.'),
+    ex('C', ['Skokovi iz čučnja', 'Skokovi iz čučnja sa pauzom dole', 'Skokovi iz dubokog čučnja'], 'skok', '6', 'Eksplozivno gore, meko doskoči sa savijenim kolenima. NE DO OTKAZA – svaki skok maksimalno brz.', 1),
+    DZAK
+  ] },
+  3: REST,
+  4: { title: 'Gornji deo B', ex: [
+    ex('A1', ['Zgibovi obrnutim hvatom', 'Zgibovi obrnutim hvatom' + SP, 'Zgibovi obrnutim hvatom sa rancem'], 'chin', '6–10', 'Dlanovi ka tebi, u širini ramena. Povuci bradu iznad šipke – radi leđa i biceps.' + RANAC),
+    ex('A2', ['Propadanja između dve stolice', 'Propadanja' + SP, 'Propadanja sa nogama na trećoj stolici'], 'propadanja', '8–15', 'Stabilne stolice! Spuštaj se dok laktovi ne budu pod 90°, telo blago napred – radi grudi i triceps.'),
+    ex('B1', ['Široki zgibovi', 'Široki zgibovi sa pauzom gore', 'Široki zgibovi, 4 s spuštanje'], 'zgib', '5–10', 'Hvat dosta širi od ramena, vodi laktovima nadole – širi leđa.'),
+    ex('B2', ['Dijamant sklekovi', 'Dijamant sklekovi' + SP, 'Dijamant sklekovi sa rancem'], 'dijamant', '8–15', 'Šake spojene ispod grudi (romb), laktovi uz telo – radi triceps i grudi.'),
+    ex('C', ['Pregib za biceps', 'Pregib za biceps' + SP, 'Pregib za biceps, 1 s pauza gore' + SP], 'biceps', '12–20', 'Laktovi uz telo, bez ljuljanja, spuštaj polako do kraja.')
+  ] },
+  5: { title: 'Donji deo B + džak', ex: [
+    ex('A1', ['Čučanj sa rancem', 'Goblet čučanj sa rancem na leđima', 'Čučanj 1½ sa rancem (dole – pola gore – dole – gore)'], 'cucanj', '15–25', 'Stopala u širini ramena, kukovi unazad, kolena prate prste, pete na podu.' + RANAC),
+    ex('A2', ['Bočni plank', 'Bočni plank sa podizanjem gornje noge', 'Bočni plank sa spuštanjem i podizanjem kuka'], 'sideplank', '30–60 s po strani', 'Lakat ispod ramena, telo u pravoj liniji. Jedna serija = obe strane.'),
+    ex('B1', ['Penjanje na stolicu sa bučicama', 'Penjanje na stolicu sa bučicama, polako dole', 'Penjanje na stolicu sa bučicama i rancem'], 'stepup', '10–15 po nozi', 'Cela stopa na stolici, gurni se gore preko pete, ne odbijaj se zadnjom nogom.'),
+    ex('B2', ['Sedanje na stolicu na jednoj nozi', 'Sedanje na stolicu na jednoj nozi' + SP, 'Sedanje na stolicu na jednoj nozi sa bučicom'], 'cucanj1', '6–12 po nozi', 'Stani ispred stolice na jednoj nozi, polako sedni i ustani bez pomoći druge noge.'),
+    ex('C', ['Podizanje na prste obe noge sa rancem', 'Podizanje na prste sa rancem, 2 s gore', 'Podizanje na prste jedne noge sa rancem'], 'prsti', '15–25', 'Podigni se što više, zadrži gore, polako spusti.'),
+    DZAK
+  ] },
+  6: REST,
+  0: REST
+};
+const DAY_NOTE = 'Zagrevanje 2–3 min. Vežbe sa istim slovom rade se u paru (superset): A1 pa odmah A2, odmor 60–90 s, ponovi 3 puta. Prve dve serije završi sa 1–2 ponavljanja u rezervi, treću idi do otkaza. Upiši koliko si uradio – sledeće nedelje pokušaj više.';
+const DANI = ['Nedelja', 'Ponedeljak', 'Utorak', 'Sreda', 'Četvrtak', 'Petak', 'Subota'];
+const MESECI = ['januar', 'februar', 'mart', 'april', 'maj', 'jun', 'jul', 'avgust', 'septembar', 'oktobar', 'novembar', 'decembar'];
+const NDAYS = 90;
+
+// ===== Datumi =====
+const pad = n => String(n).padStart(2, '0');
+const key = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const parse = k => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDays = (k, n) => { const d = parse(k); return key(new Date(d.getFullYear(), d.getMonth(), d.getDate() + n)); };
+const todayKey = () => key(new Date());
+const nice = k => { const d = parse(k); return `${DANI[d.getDay()]}, ${d.getDate()}. ${MESECI[d.getMonth()]}`; };
+const planOf = k => {
+  const P = PLAN[parse(k).getDay()];
+  if (!P.v) return P;
+  // Isti dan u nedelji smenjuje trening A i B
+  return { title: P.title, ex: P.v[Math.floor(Math.max(0, days().indexOf(k)) / 7) % 2], ab: Math.floor(Math.max(0, days().indexOf(k)) / 7) % 2 };
+};
+
+// ===== Stanje (localStorage) =====
+const LS = 'mighty-3meseca-v4';
+let S;
+try { S = JSON.parse(localStorage.getItem(LS)); } catch (e) { S = null; }
+if (!S || !S.start) { let old = null; try { old = JSON.parse(localStorage.getItem('mighty-3meseca-v3')) || JSON.parse(localStorage.getItem('mighty-3meseca-v2')) || JSON.parse(localStorage.getItem('mighty-3meseca')); } catch (e) {} S = { start: (old && old.start) || todayKey(), d: {} }; }
+S.r = S.r || {}; // upisana ponavljanja: S.r[datum][vežba] = [serija1, serija2]
+const repsOf = (k, i) => { const a = (S.r[k] || {})[i]; return Array.from({ length: exOf(k, i).sets }, (_, j) => Array.isArray(a) ? a[j] || '' : ''); };
+const save = () => { try { localStorage.setItem(LS, JSON.stringify(S)); } catch (e) {} };
+save();
+
+const days = () => Array.from({ length: NDAYS }, (_, i) => addDays(S.start, i));
+const last = () => addDays(S.start, NDAYS - 1);
+const inRange = k => k >= S.start && k <= last();
+const monthOf = k => Math.min(2, Math.floor(Math.max(0, days().indexOf(k)) / 30)); // 0, 1, 2
+const exOf = (k, i) => { const e = planOf(k).ex[i], m = monthOf(k); return Object.assign({}, e, { name: e.n[m], tip: e.tm ? e.tm[m] : e.t }); };
+const setsOf = (k, i) => {
+  const a = (S.d[k] && S.d[k][i]) || [];
+  return Array.from({ length: exOf(k, i).sets }, (_, j) => !!a[j]);
+};
+const exDone = (k, i) => setsOf(k, i).every(Boolean);
+const dayDone = k => planOf(k).ex.every((_, i) => exDone(k, i));
+const dayAny = k => planOf(k).ex.some((_, i) => setsOf(k, i).some(Boolean));
+function setSets(k, i, arr) { (S.d[k] = S.d[k] || {})[i] = arr; save(); render(); }
+
+let sel = inRange(todayKey()) ? todayKey() : S.start;
+let tab = monthOf(sel);
+
+// ===== Tajmer za džak =====
+const T = { total: 0, left: 0, end: 0, run: false, k: null, i: null, iv: null };
+const fmt = s => `${pad(Math.floor(s / 60))}:${pad(s % 60)}`;
+function timerFor(k, i, min) {
+  if (T.k !== k || T.i !== i) { if (T.run) return; Object.assign(T, { k, i, total: min * 60, left: min * 60 }); }
+}
+function tick() {
+  if (!T.run) return;
+  T.left = Math.max(0, Math.round((T.end - Date.now()) / 1000));
+  if (T.left === 0) {
+    T.run = false; clearInterval(T.iv);
+    if (navigator.vibrate) navigator.vibrate([400, 200, 400, 200, 400]);
+    beep();
+    setSets(T.k, T.i, [true]);
+    return;
+  }
+  const el = document.getElementById('tVal'); if (el) el.textContent = fmt(T.left);
+}
+function beep() {
+  try { const c = new (window.AudioContext || window.webkitAudioContext)(), o = c.createOscillator(); o.connect(c.destination); o.frequency.value = 880; o.start(); o.stop(c.currentTime + 1); } catch (e) {}
+}
+function tStart() { if (T.run || T.left === 0) return; T.run = true; T.end = Date.now() + T.left * 1000; T.iv = setInterval(tick, 250); render(); }
+function tPause() { if (!T.run) return; tick(); T.run = false; clearInterval(T.iv); render(); }
+function tReset() { T.run = false; clearInterval(T.iv); T.left = T.total; render(); }
+
+// ===== Statistika =====
+function stats() {
+  let exTot = 0, exOk = 0, dOk = 0, dTot = 0;
+  const all = days();
+  all.forEach(k => {
+    const p = planOf(k); if (p.rest) return;
+    dTot++;
+    p.ex.forEach((_, i) => { exTot++; if (exDone(k, i)) exOk++; });
+    if (dayDone(k)) dOk++;
+  });
+  // Niz: uzastopni završeni trening-dani unazad; subota (odmor) se preskače,
+  // a današnji nezavršeni trening ne prekida niz.
+  let streak = 0, k = todayKey() > last() ? last() : todayKey();
+  if (!planOf(k).rest && !dayDone(k)) k = addDays(k, -1);
+  while (k >= S.start) {
+    if (!planOf(k).rest) { if (dayDone(k)) streak++; else break; }
+    k = addDays(k, -1);
+  }
+  return { exOk, exTot, dOk, dTot, streak, pct: exTot ? Math.round(exOk / exTot * 100) : 0 };
+}
+
+// ===== Prikaz =====
+const $ = id => document.getElementById(id);
+function render() {
+  const tk = todayKey(), tp = planOf(tk);
+  let h = `<div class="muted">Danas · ${nice(tk)}</div>`;
+  if (tk < S.start) h += `<h2>Program počinje ${nice(S.start)}</h2><p class="muted">Plan je spreman – vidimo se tada.</p>`;
+  else if (tk > last()) h += `<h2>Program je završen 🏆</h2><p class="muted">Bravo! Izaberi novi datum početka u podešavanjima za novi krug.</p>`;
+  else {
+    h += `<h2>${tp.title}<span class="lvl">Mesec ${monthOf(tk) + 1}</span>${dayDone(tk) ? ' ✅' : ''}</h2>`;
+    h += tp.rest ? `<div class="note">${tp.note}</div>` : `<div class="muted">${tp.ex.length > 1 ? (tp.ex.some(e => e.min) ? '~35 min (sa džakom)' : '~30 min') : '15 minuta'} · Dan ${days().indexOf(tk) + 1} od ${NDAYS}</div>`;
+    h += `<button class="btn big" id="go">${tp.rest ? 'Pogledaj današnji plan' : 'Započni trening'}</button>`;
+  }
+  $('today').innerHTML = h;
+  const go = $('go'); if (go) go.onclick = () => { sel = tk; tab = monthOf(tk); render(); $('daySec').scrollIntoView({ behavior: 'smooth' }); };
+
+  const st = stats();
+  $('pct').textContent = st.pct + '%'; $('barFill').style.width = st.pct + '%';
+  $('stEx').textContent = `${st.exOk}/${st.exTot}`; $('stDays').textContent = `${st.dOk}/${st.dTot}`; $('stStreak').textContent = st.streak;
+
+  // Izabrani dan
+  const p = planOf(sel), idx = days().indexOf(sel), m = monthOf(sel);
+  $('dayDate').textContent = `Dan ${idx + 1} · Mesec ${m + 1} · ${nice(sel)}`;
+  $('dayTitle').textContent = p.title + (dayDone(sel) ? ' ✅' : '');
+  $('dayNote').innerHTML = p.rest ? `<div class="note">${p.note}</div>` : p.ex.length > 1 ? `<div class="note">${DAY_NOTE}</div>` : '';
+  $('prevDay').disabled = idx <= 0; $('nextDay').disabled = idx >= NDAYS - 1;
+  $('exList').innerHTML = p.ex.map((_, i) => {
+    const e = exOf(sel, i), s = setsOf(sel, i), ok = s.every(Boolean);
+    const sub = p.rest ? '' : e.min ? `${e.min} minuta` : e.nf ? `3 serije · ${e.c} (ne do otkaza)` : `3 serije · cilj ${e.c} · zadnja do otkaza`;
+    let body = `<div class="exHead"><div class="nm">${e.l ? '<span class="lvl">' + e.l + '</span> ' : ''}${e.name}<small>${sub}</small></div><button class="chk ${ok ? 'on' : ''}" data-ex="${i}" aria-label="Označi vežbu">${ok ? '✓' : ''}</button></div>${pic(e.p)}<p class="tip">${e.tip}</p>`;
+    if (e.sets > 1 && !p.rest) {
+      const cur = repsOf(sel, i), prev = repsOf(addDays(sel, -7), i);
+      body += `<div class="reps">${cur.map((v, j) => `<label>${j + 1}. serija<input type="number" inputmode="numeric" min="0" max="999" placeholder="${prev[j] || '–'}" data-rep="${i}" data-rs="${j}" value="${v || ''}"></label>`).join('')}<span class="muted">${prev.some(Boolean) ? 'Prošli put: <b class="lime">' + prev.map(v => v || '–').join(' / ') + '</b>' : 'Prvi put – upiši koliko si uradio'}</span></div>`;
+    }
+    if (e.sets > 1) body += `<div class="sets">${s.map((v, j) => `<button class="set ${v ? 'on' : ''}" data-ex="${i}" data-set="${j}">Serija ${j + 1}</button>`).join('')}</div>`;
+    if (e.min) {
+      timerFor(sel, i, e.min);
+      body += T.k === sel && T.i === i
+        ? `<div class="timer"><div class="t" id="tVal">${fmt(T.left)}</div><div class="row"><button class="btn" data-t="start">${T.left < T.total && !T.run ? 'Nastavi' : 'Start'}</button><button class="btn ghost" data-t="pause">Pauza</button><button class="btn ghost" data-t="reset">Reset</button></div></div>`
+        : `<div class="timer muted">Tajmer je zauzet drugim danom – resetuj ga tamo.</div>`;
+    }
+    return `<div class="ex ${ok ? 'ok' : ''}">${body}</div>`;
+  }).join('');
+  $('markDay').textContent = p.rest ? 'Označi kao odmoreno' : 'Označi dan završenim';
+
+  // Kartice meseci
+  $('tabs').innerHTML = [0, 1, 2].map(t => `<button class="${t === tab ? 'on' : ''}" data-tab="${t}">Mesec ${t + 1}</button>`).join('');
+
+  // Kalendar izabranog meseca (30 dana)
+  const block = days().slice(tab * 30, tab * 30 + 30);
+  let c = '', lastMonth = -1;
+  block.forEach(k => {
+    const d = parse(k);
+    if (d.getMonth() !== lastMonth) {
+      lastMonth = d.getMonth();
+      c += `<div class="mon">${MESECI[lastMonth]} ${d.getFullYear()}</div>` + ['Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub', 'Ned'].map(w => `<div class="wd">${w}</div>`).join('');
+      c += '<div></div>'.repeat((d.getDay() + 6) % 7);
+    }
+    const pl = planOf(k);
+    const short = { 'Gornji deo A': 'gornji', 'Gornji deo B': 'gornji', 'Donji deo A + džak': 'noge', 'Donji deo B + džak': 'noge', 'Odmor': 'odmor' }[pl.title];
+    const cls = ['d', pl.rest ? 'rest' : '', dayDone(k) && !pl.rest ? 'done' : (dayAny(k) ? 'part' : ''), k === tk ? 'today' : '', k === sel ? 'sel' : ''].join(' ');
+    c += `<button class="${cls}" data-day="${k}">${d.getDate()}<small>${short}</small></button>`;
+  });
+  $('cal').innerHTML = c;
+  $('startDate').value = S.start;
+}
+
+// ===== Događaji =====
+document.addEventListener('click', ev => {
+  const b = ev.target.closest('button'); if (!b) return;
+  if (b.dataset.tab) { tab = +b.dataset.tab; render(); return; }
+  if (b.dataset.day) { sel = b.dataset.day; render(); $('daySec').scrollIntoView({ behavior: 'smooth' }); return; }
+  if (b.dataset.t) { ({ start: tStart, pause: tPause, reset: tReset })[b.dataset.t](); return; }
+  if (b.dataset.ex !== undefined) {
+    const i = +b.dataset.ex, s = setsOf(sel, i);
+    if (b.dataset.set !== undefined) { s[+b.dataset.set] = !s[+b.dataset.set]; setSets(sel, i, s); }
+    else { const all = s.every(Boolean); setSets(sel, i, s.map(() => !all)); }
+  }
+});
+const go = n => { const i = days().indexOf(sel) + n; if (i >= 0 && i < NDAYS) { sel = days()[i]; tab = monthOf(sel); render(); } };
+$('prevDay').onclick = () => go(-1);
+$('nextDay').onclick = () => go(1);
+$('markDay').onclick = () => { S.d[sel] = {}; planOf(sel).ex.forEach((_, i) => S.d[sel][i] = Array(exOf(sel, i).sets).fill(true)); save(); render(); };
+$('resetDay').onclick = () => { delete S.d[sel]; delete S.r[sel]; save(); render(); };
+$('startDate').onchange = e => {
+  if (!e.target.value) return;
+  if (Object.keys(S.d).length && !confirm('Promena datuma početka pomera kalendar. Napredak po datumima ostaje sačuvan. Nastaviti?')) { render(); return; }
+  S.start = e.target.value; save(); sel = inRange(todayKey()) ? todayKey() : S.start; tab = monthOf(sel); tReset(); render();
+};
+$('resetAll').onclick = () => {
+  if (!confirm('Da li sigurno želiš da obrišeš SAV napredak? Ovo se ne može vratiti.')) return;
+  S.d = {}; S.r = {}; save(); tReset(); render();
+};
+document.addEventListener('change', ev => {
+  const t = ev.target; if (!t.dataset || t.dataset.rep === undefined) return;
+  const i = +t.dataset.rep, j = +t.dataset.rs, v = t.value.trim();
+  const r = repsOf(sel, i); r[j] = v;
+  (S.r[sel] = S.r[sel] || {})[i] = r;
+  const s = setsOf(sel, i); if (v) s[j] = true; // upisan broj = serija urađena
+  setSets(sel, i, s);
+});
+document.addEventListener('visibilitychange', () => { if (!document.hidden) { tick(); render(); } });
+
+render();
+
+</script>
+</body>
+</html>
