@@ -175,7 +175,7 @@ function pic(key) {
 
 // ===== Plan za rast: gornji/donji deo 4× nedeljno, supersetovi, 3 serije (poslednja do otkaza) + džak 2× 15 min =====
 // l = oznaka (A1/A2 = superset), n = naziv za mesec 1/2/3, c = cilj ponavljanja, nf = NE do otkaza
-const ex = (l, n, p, c, t, nf) => ({ l, n, p, c, t, nf, sets: 3 });
+const ex = (l, n, p, c, t, nf) => ({ l, n, p, c, t, nf, sets: 2 });
 const DZAK = {
   l: 'Džak', n: ['Boks džak', 'Boks džak', 'Boks džak'], p: 'dzak', min: 15, sets: 1,
   tm: [
@@ -185,7 +185,7 @@ const DZAK = {
   ]
 };
 const SP = ', 3 s spuštanje';
-const RANAC = ' Kad pređeš gornji broj u sve 3 serije, stavi ranac sa težinom.';
+const RANAC = ' Kad pređeš gornji broj u obe serije, stavi ranac sa težinom.';
 const REST = { title: 'Odmor', rest: 1, note: 'Dan odmora 😴 – ovo nije propušten trening. Prošetaj 7–8 hiljada koraka ako možeš.', ex: [{ l: '', n: ['Odmor', 'Odmor', 'Odmor'], p: 'odmor', sets: 1, t: 'Bez treninga. Mišići rastu dok se odmaraš.' }] };
 const PLAN = {
   1: { title: 'Gornji deo A', ex: [
@@ -222,7 +222,7 @@ const PLAN = {
   6: REST,
   0: REST
 };
-const DAY_NOTE = 'Zagrevanje 2–3 min. Vežbe sa istim slovom rade se u paru (superset): A1 pa odmah A2, odmor 60–90 s, ponovi 3 puta. Prve dve serije završi sa 1–2 ponavljanja u rezervi, treću idi do otkaza. Upiši koliko si uradio – sledeće nedelje pokušaj više.';
+const DAY_NOTE = 'Zagrevanje 2–3 min. Vežbe sa istim slovom rade se u paru (superset): A1 pa odmah A2, odmor 60–90 s, ponovi još jednom. Prvu seriju završi sa 1–2 ponavljanja u rezervi, drugu idi do otkaza. Upiši koliko si uradio – sledeće nedelje pokušaj više.';
 const DANI = ['Nedelja', 'Ponedeljak', 'Utorak', 'Sreda', 'Četvrtak', 'Petak', 'Subota'];
 const MESECI = ['januar', 'februar', 'mart', 'april', 'maj', 'jun', 'jul', 'avgust', 'septembar', 'oktobar', 'novembar', 'decembar'];
 const NDAYS = 90;
@@ -323,7 +323,7 @@ function render() {
   else if (tk > last()) h += `<h2>Program je završen 🏆</h2><p class="muted">Bravo! Izaberi novi datum početka u podešavanjima za novi krug.</p>`;
   else {
     h += `<h2>${tp.title}<span class="lvl">Mesec ${monthOf(tk) + 1}</span>${dayDone(tk) ? ' ✅' : ''}</h2>`;
-    h += tp.rest ? `<div class="note">${tp.note}</div>` : `<div class="muted">${tp.ex.length > 1 ? (tp.ex.some(e => e.min) ? '~35 min (sa džakom)' : '~30 min') : '15 minuta'} · Dan ${days().indexOf(tk) + 1} od ${NDAYS}</div>`;
+    h += tp.rest ? `<div class="note">${tp.note}</div>` : `<div class="muted">${tp.ex.length > 1 ? (tp.ex.some(e => e.min) ? '~30 min (sa džakom)' : '~20 min') : '15 minuta'} · Dan ${days().indexOf(tk) + 1} od ${NDAYS}</div>`;
     h += `<button class="btn big" id="go">${tp.rest ? 'Pogledaj današnji plan' : 'Započni trening'}</button>`;
   }
   $('today').innerHTML = h;
@@ -341,7 +341,7 @@ function render() {
   $('prevDay').disabled = idx <= 0; $('nextDay').disabled = idx >= NDAYS - 1;
   $('exList').innerHTML = p.ex.map((_, i) => {
     const e = exOf(sel, i), s = setsOf(sel, i), ok = s.every(Boolean);
-    const sub = p.rest ? '' : e.min ? `${e.min} minuta` : e.nf ? `3 serije · ${e.c} (ne do otkaza)` : `3 serije · cilj ${e.c} · zadnja do otkaza`;
+    const sub = p.rest ? '' : e.min ? `${e.min} minuta` : e.nf ? `2 serije · ${e.c} (ne do otkaza)` : `2 serije · cilj ${e.c} · 2. do otkaza`;
     let body = `<div class="exHead"><div class="nm">${e.l ? '<span class="lvl">' + e.l + '</span> ' : ''}${e.name}<small>${sub}</small></div><button class="chk ${ok ? 'on' : ''}" data-ex="${i}" aria-label="Označi vežbu">${ok ? '✓' : ''}</button></div>${pic(e.p)}<p class="tip">${e.tip}</p>`;
     if (e.sets > 1 && !p.rest) {
       const cur = repsOf(sel, i), prev = repsOf(addDays(sel, -7), i);
